@@ -1,0 +1,49 @@
+.modal-content{
+    background-color: #fff;
+    border-radius: 5px;
+    box-sizing: border-box;
+    box-shadow:0 5px 15px rgba(0,0,0,.5);
+    display: none;
+    flex-direction: column;
+    margin: 30px;
+    overflow: hidden;
+    width: 400px;
+    .modal-header{
+        align-items: center;
+        border-bottom: 1px solid #e5e5e5;
+        display: flex;
+        justify-content: space-between;
+        padding: 20px 30px;
+        .modal-title{
+            color: #566787;
+            font-size: 18px;
+            margin: 0;
+        }
+        .fa{
+            color: #cfccc6;
+            cursor: pointer;
+            &:hover {
+                color: #636363;
+            }
+        }
+    }
+    .modal-body{
+        padding: 20px 30px;
+        p{
+            margin: 0 0 10px;
+            font-size: 13px;
+        }
+        .warning-text{
+            color: #8a6d3b;
+            font-size: 10px;
+        }
+    }
+    .modal-footer{
+        background-color: #ECF0F1;
+        border-top: 1px solid $card-borders;
+        box-sizing: border-box;
+        display: flex;
+        justify-content: flex-end;
+        padding: 20px 30px;
+    }
+}

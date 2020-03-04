@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+    <link rel="stylesheet" type="text/css" href="./styles/styles.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.0/axios.min.js" integrity="sha256-S1J4GVHHDMiirir9qsXWc8ZWw74PHHafpsHp5PXtjTs=" crossorigin="anonymous"></script>
+    <title>Manage Employees</title>
+</head>
+<body>
+    <section class="all">
+        <header class="header">
+            <h1>Manage <strong>Employees</strong></h1>
+            <button class="button" id="addBttn">
+                 <i class="material-icons">&#xE147;</i> 
+                 Add New Employee
+            </button>
+        </header>
+        <article class="mainSection">
+            <input type="text"placeholder="Filter..." class="searchBar">
+            <table class="employees-list">
+                <thead class="employees-list-head"> 
+                    <tr>
+                        <th class="th-checkbox">
+                            <label class="label-checkbox">
+                                <input type="checkbox" id="check-all">
+                                <i class="fa fa-check-square"></i>
+                            </label>
+                        </th>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Address</th>
+                        <th>Phone</th>
+                        <th>Actions</th>
+                    </tr>  
+                </thead>
+                <tbody class="employees-list-body">
+                </tbody>
+                </tr>
+            </table>
+
+        </article>
+    </section>
+    <section id="add" class="modal">
+        
+        <form class="card" id="add-employee">
+            <header class="card-header">
+                <h2> Add employee</h2>
+                <i class="closeBttn fa fa-times"></i>
+            </header>
+            <div class="card-body">
+                <div>
+                    <label>Name</label>
+                    <input id="add-name" class ="input-name" type="text" required
+                    minlength="4" maxlength="50">
+                </div>
+                <div>
+                    <label>Email</label>
+                    <input id="add-email" class ="input-email"type="email" required>
+                </div>
+                <div>
+                    <label>Address</label>
+                    <input id="add-address"class ="input-address" type="text" required
+                    minlength="4" maxlength="60">
+                </div>
+                <div>
+                    <label>Phone</label>
+                    <input id="add-phone" class ="input-phone"type="number" required>
+                </div>
+
+            </div>
+            <footer class="card-footer">
+                <button id="cancelAdd" type="button" class="button cancelBttn">Cancel</button>
+                <button id="submitAdd" type="submit" class="button submitBttn" >Add</button>
+            </footer>
+        </form>
+
+        <!--CARD DE MODIFY-->
+        <form class="card" id="modify-employee">
+            <header class="card-header">
+                <h2> Modify employee</h2>
+                <i class="closeBttn fa fa-times"></i>
+            </header>
+            <div class="card-body">
+                <div>
+                    <label>Name</label>
+                    <input id="update-fullname" class ="input-name" type="text" required
+                    minlength="4" maxlength="50">
+                </div>
+                <div>
+                    <label>Email</label>
+                    <input type="email" id="update-email" class="input-email" required>
+                </div>
+                <div>
+                    <label>Address</label>
+                    <input id="update-address"class ="input-address" type="text" required
+                    minlength="4" maxlength="60">
+                </div>
+                <div>
+                    <label>Phone</label>
+                    <input id="update-phone" class ="input-phone"type="number" required>
+                </div>
+
+            </div>
+            <footer class="card-footer">
+                <button class="button cancelBttn" type="button" id="cancelUpdt">Cancel</button>
+                <button class="button submitBttn" type="submit" id="submitUpdt">Add</button>
+            </footer>
+        </form>
+        <!--MENSAJE DE DELETE-->
+        <form id="delete-employee" class="modal-content">
+            
+                <input id="userId" type="hidden" class="form-control" required value="2">
+                <header class="modal-header">
+                    <h2 class="modal-title">Delete Employee</h2>
+                    <i class="closeBttn fa fa-times"></i>
+                </header>
+                <div class="modal-body">
+                    <p>Are you sure you want to delete these Records?</p>
+                    <p class="warning-text">This action cannot be undone</p>
+                </div>
+                <footer class="modal-footer">
+                    <input type="button" class="button cancelBttn" value="Cancel">
+                    <input type="button" class="deleteBttn" value="Delete">
+                </footer>
+            
+            </form>
+    </section>
+    <script src="script/variables.js"></script>
+    <script src="script/printList.js"></script>
+    <script src="script/handleModals.js"></script>
+    <script src="script/get.js"></script>
+    <script src="script/edit.js"></script>
+    <script src="script/post.js"></script>
+    <script src="script/delete.js"></script>
+    <script src="script/check.js"></script>
+    <script src="script/search.js"></script>
+
+</body>
+</html>
